@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>openfigure</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header id="topbar">
+  <strong class="brand">openfigure</strong>
+  <input id="title" aria-label="Figure title" value="Untitled figure">
+  <span id="save-status" role="status" aria-live="polite">Saved</span>
+  <span class="sep"></span>
+  <div class="group" role="toolbar" aria-label="Tools">
+    <button data-tool="select" class="tool active" title="Select (V)">Select</button>
+    <button data-tool="connect" class="tool" title="Connector (C): click source, then target">Connect</button>
+    <button data-tool="text" class="tool" title="Text (T)">Text</button>
+    <button data-tool="compartment" class="tool" title="Compartment (K): drag a region">Region</button>
+  </div>
+  <label class="inline">Arrow
+    <select id="semantic"><option value="activates">activates</option><option value="inhibits">inhibits</option><option value="binds">binds</option><option value="translocates">translocates</option><option value="plain">plain</option></select>
+  </label>
+  <label class="inline">Route
+    <select id="routing"><option value="straight">straight</option><option value="elbow">elbow</option><option value="curved">curved</option></select>
+  </label>
+  <span class="sep"></span>
+  <button id="undo" title="Undo (Ctrl/Cmd+Z)">Undo</button>
+  <button id="redo" title="Redo (Ctrl/Cmd+Shift+Z)">Redo</button>
+  <label class="inline"><input type="checkbox" id="snap" checked> Snap</label>
+  <label class="inline"><input type="checkbox" id="grid" checked> Grid</label>
+  <button id="zoom-out" aria-label="Zoom out">−</button><span id="zoom-label">100%</span><button id="zoom-in" aria-label="Zoom in">+</button>
+  <span class="sep"></span>
+  <button id="btn-example">Example</button>
+  <button id="btn-open">Open</button>
+  <button id="btn-save">Save JSON</button>
+  <button id="btn-svg" class="primary">Export SVG</button>
+  <select id="png-scale" aria-label="PNG scale"><option value="1">PNG 1×</option><option value="2" selected>PNG 2×</option><option value="4">PNG 4×</option></select>
+  <button id="btn-png" class="primary">Export PNG</button>
+  <input type="file" id="file" accept=".json,application/json" hidden>
+</header>
+<aside id="library" aria-label="Asset library">
+  <input id="search" type="search" placeholder="Search assets (e.g. kinase, T cell, plate)" aria-label="Search assets">
+  <div id="domains" role="group" aria-label="Domains"></div>
+  <div id="assets" role="list"></div>
+  <p class="hint">Drag onto the canvas, or click to add. Assets are original CC0 art and still need scientist review.</p>
+</aside>
+<main id="stage"><div id="canvas-wrap"></div></main>
+<aside id="inspector" aria-label="Properties"></aside>
+<script type="module" src="./editor.js"></script>
+</body>
+</html>

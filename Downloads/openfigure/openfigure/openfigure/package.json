@@ -1,0 +1,17 @@
+{
+  "name": "openfigure",
+  "version": "0.1.0",
+  "description": "Open-source scientific figure editor: scene graph, original SVG asset library, connectors, SVG/PNG export, browser editor.",
+  "type": "module",
+  "license": "MIT",
+  "main": "src/index.js",
+  "exports": { ".": "./src/index.js", "./core": "./src/core/index.js", "./assets": "./src/assets/index.js" },
+  "bin": { "openfigure": "./bin/openfigure.js" },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "serve": "node bin/openfigure.js serve",
+    "example": "node bin/openfigure.js render examples/mapk-pathway.json out/mapk-pathway.svg"
+  },
+  "files": ["src", "bin", "examples", "docs", "LICENSE", "README.md"],
+  "engines": { "node": ">=18" }
+}
